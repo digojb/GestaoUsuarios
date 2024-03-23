@@ -15,7 +15,6 @@ Rota de Clientes
 """
 
 #Rotas: 
-
 @cliente_route.route('/')
 def lista_clientes():
     """ Listar os cliente """
@@ -42,6 +41,7 @@ def inserir_cliente():
 @cliente_route.route('/new')
 def form_cliente():
     """ Renderizar o formulario para criar um cliente """
+    
     return render_template('form_cliente.html')
 
 
@@ -66,6 +66,7 @@ def form_edit_cliente(cliente_id):
 @cliente_route.route('/<int:cliente_id>/update', methods = ['PUT'])
 def atualizar_cliente(cliente_id):
     """ Atualizar os dados do cliente """
+    
     #obter dados do formulario de edição
     data = request.json
 
